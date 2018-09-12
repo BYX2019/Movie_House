@@ -11,7 +11,7 @@
     </bean>
     <bean class="redis.clients.jedis.JedisPool" id="jedisPool">
         <!-- 给构造方法 指定参数 -->
-        <constructor-arg name="host" value=""/>
+        <constructor-arg name="host" value="47.106.10.108"/>
         <constructor-arg name="port" value="6379"/>
     </bean>
 
