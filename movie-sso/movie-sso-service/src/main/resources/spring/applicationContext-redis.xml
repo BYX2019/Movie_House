@@ -4,7 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
 
-    <!-- 使用哪个时 只要注释掉另外一个就好了-->
     <!-- 连接redis单机版 -->
     <bean id="jedisClientPool" class="com.byx.movie.common.jedis.JedisClientPool">
         <property name="jedisPool" ref="jedisPool"/>
@@ -14,24 +13,4 @@
         <constructor-arg name="host" value=""/>
         <constructor-arg name="port" value="6379"/>
     </bean>
-
-    <!-- 连接集群版 -->
-    <!--<bean id="jedisClientCluster" class="com.exler.common.jedis.JedisClientCluster">-->
-        <!--<property name="jedisCluster" ref="jedisCluster"/>-->
-    <!--</bean>-->
-    <!--<bean id="jedisCluster" class="redis.clients.jedis.JedisCluster">-->
-        <!--<constructor-arg name="nodes">-->
-            <!--<set>-->
-                <!--<bean class="redis.clients.jedis.HostAndPort">-->
-                    <!--<constructor-arg name="host" value=""/>-->
-                    <!--<constructor-arg name="port" value="7001"/>-->
-                <!--</bean>-->
-                <!--<bean class="redis.clients.jedis.HostAndPort">-->
-                    <!--<constructor-arg name="host" value=""/>-->
-                    <!--<constructor-arg name="port" value="7001"/>-->
-                <!--</bean>-->
-            <!--</set>-->
-        <!--</constructor-arg>-->
-    <!--</bean>-->
-
 </beans>
