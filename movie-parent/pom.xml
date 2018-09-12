@@ -16,7 +16,8 @@
         <mybatis.version>3.2.8</mybatis.version>
         <mybatis.spring.version>1.2.2</mybatis.spring.version>
         <mybatis.paginator.version>1.2.15</mybatis.paginator.version>
-        <mysql.version>5.1.32</mysql.version>
+        <mybatis.tk.version>3.3.9</mybatis.tk.version>
+        <oracle.version>11.2.0.1.0</oracle.version>
         <slf4j.version>1.6.4</slf4j.version>
         <jackson.version>2.4.2</jackson.version>
         <druid.version>1.0.9</druid.version>
@@ -114,16 +115,29 @@
                 <artifactId>mybatis-paginator</artifactId>
                 <version>${mybatis.paginator.version}</version>
             </dependency>
+            <!-- 分页插件 -->
             <dependency>
                 <groupId>com.github.pagehelper</groupId>
                 <artifactId>pagehelper</artifactId>
                 <version>${pagehelper.version}</version>
             </dependency>
-            <!-- MySql -->
+            <!--通用Mapper-->
             <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql.version}</version>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper</artifactId>
+                <version>${mybatis.tk.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.persistence</groupId>
+                        <artifactId>persistence-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!-- oracle -->
+            <dependency>
+                <groupId>oracle.jdbc.driver</groupId>
+                <artifactId>ojdbc6</artifactId>
+                <version>${oracle.version}</version>
             </dependency>
             <!-- 连接池 -->
             <dependency>

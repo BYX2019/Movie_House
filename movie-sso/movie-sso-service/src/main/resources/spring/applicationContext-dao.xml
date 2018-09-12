@@ -33,7 +33,7 @@
                     <property name="properties">
                         <!--使用下面的方式配置参数，一行配置一个 -->
                         <value>
-                            helperDialect=mysql
+                            helperDialect=oracle
                         </value>
                     </property>
                 </bean>
@@ -41,7 +41,13 @@
         </property>
     </bean>
     <!-- 包扫描器-->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.exler.mapper"/>
+    <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+        <property name="basePackage" value="com.byx.movie.mapper"/>
+        <property name="properties">
+            <value>
+                mappers=tk.mybatis.mapper.common.Mapper
+            </value>
+        </property>
     </bean>
 </beans>
