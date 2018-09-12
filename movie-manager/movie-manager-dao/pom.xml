@@ -52,7 +52,7 @@
         </dependency>
         <!-- oracle -->
         <dependency>
-            <groupId>oracle.jdbc.driver</groupId>
+            <groupId>ojdbc</groupId>
             <artifactId>ojdbc6</artifactId>
         </dependency>
         <!-- 连接池 -->
