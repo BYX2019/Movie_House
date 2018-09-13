@@ -43,6 +43,7 @@
         <activemq.version>5.11.2</activemq.version>
         <freemarker.version>2.3.23</freemarker.version>
         <quartz.version>2.2.2</quartz.version>
+        <persistence-api.version>1.0</persistence-api.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -242,6 +243,12 @@
                 <groupId>org.freemarker</groupId>
                 <artifactId>freemarker</artifactId>
                 <version>${freemarker.version}</version>
+            </dependency>
+            <!-- eitity注解 -->
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>persistence-api</artifactId>
+                <version>${persistence-api.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

@@ -1,33 +1,41 @@
 package com.byx.movie.manager.pojo;
 
+import javax.persistence.Column;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
+@Table(name = "USER_BASE")
 public class UserBase implements Serializable {
     /**
      * 用户id
      */
+    @Column(name = "USER_ID")
     private BigDecimal userId;
 
     /**
      * 用户名
      */
+    @Column(name = "USER_NAME")
     private String userName;
 
     /**
      * 用户密码
      */
+    @Column(name = "USER_PASSWORD")
     private String userPassword;
 
     /**
      * 用户状态（0禁止，1正常，2废除）
      */
+    @Column(name = "USER_STATUS")
     private Short userStatus;
 
     /**
      * 用户注册时间
      */
+    @Column(name = "JOIN_DATE")
     private Date joinDate;
 
     private static final long serialVersionUID = 1L;
