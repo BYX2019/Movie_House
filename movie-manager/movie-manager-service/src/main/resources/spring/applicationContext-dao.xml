@@ -41,13 +41,16 @@
         </property>
     </bean>
     <!-- 包扫描器-->
-    <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.byx.movie.mapper"/>
-        <property name="properties">
-            <value>
-                mappers=tk.mybatis.mapper.common.Mapper
-            </value>
-        </property>
     </bean>
+    <!--<bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">-->
+        <!--<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />-->
+        <!--<property name="basePackage" value="com.byx.movie.mapper"/>-->
+        <!--<property name="properties">-->
+            <!--<value>-->
+                <!--mappers=tk.mybatis.mapper.common.Mapper-->
+            <!--</value>-->
+        <!--</property>-->
+    <!--</bean>-->
 </beans>
