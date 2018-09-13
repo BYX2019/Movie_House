@@ -28,6 +28,9 @@ public class LoginServiceImpl implements LoginService {
         UserBaseExample.Criteria criteria = example.createCriteria();
         criteria.andUserNameEqualTo(user.getUserName());
         List<UserBase> list = userBaseMapper.selectByExample(example);
+        for (UserBase userBase : list) {
+            System.out.println(userBase);
+        }
         return null;
     }
 }
