@@ -23,10 +23,10 @@
     <mvc:resources location="/js/" mapping="/js/**"/>
     <mvc:resources location="/images/" mapping="/images/**"/>
     <!-- 引用dubbo服务 -->
-    <!--<dubbo:application name="movie-sso-web"/>-->
-    <!--<dubbo:registry protocol="zookeeper" address="47.106.10.108:2181"/>-->
+    <dubbo:application name="movie-sso-web"/>
+    <dubbo:registry protocol="zookeeper" address="47.106.10.108:2181"/>
     <!-- sso服务-->
-    <!--<dubbo:reference interface="com.byx.movie.sso.service.RegisterService" id="registerService"/>-->
-    <!--<dubbo:reference interface="com.byx.movie.sso.service.LoginService" id="loginService"/>-->
+    <dubbo:reference interface="com.byx.movie.sso.service.RegisterService" id="registerService"/>
+    <dubbo:reference interface="com.byx.movie.sso.service.LoginService" id="loginService"/>
 
 </beans>

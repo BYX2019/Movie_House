@@ -2,12 +2,13 @@ package com.byx.movie.sso.service.impl;
 
 import com.byx.movie.common.utils.MovieResult;
 import com.byx.movie.manager.pojo.UserBase;
-import com.byx.movie.mapper.IUserBaseDao;
+import com.byx.movie.manager.pojo.UserBaseExample;
+import com.byx.movie.mapper.UserBaseMapper;
 import com.byx.movie.sso.service.LoginService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Example;
 
-import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author Exler
@@ -18,16 +19,15 @@ import javax.annotation.Resource;
 @Service
 public class LoginServiceImpl implements LoginService {
 
-    @Resource
-    private IUserBaseDao userBaseDao;
+    @Autowired
+    private UserBaseMapper userBaseMapper;
 
     @Override
     public MovieResult userLogin(UserBase user) {
-        Example example = new Example(UserBase.class);
-        Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("USER_NAME", user.getUserName());
-//        UserBase userBase = userBaseDao.selectOne(user);
-//        System.out.println(userBase);
+        UserBaseExample example = new UserBaseExample();
+        UserBaseExample.Criteria criteria = example.createCriteria();
+        criteria.andUserNameEqualTo(user.getUserName());
+        List<UserBase> list = userBaseMapper.selectByExample(example);
         return null;
     }
 }
