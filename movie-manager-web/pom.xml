@@ -10,10 +10,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>movie-sso-web</artifactId>
+    <artifactId>movie-manager-web</artifactId>
     <packaging>war</packaging>
 
-    <name>movie-sso-web</name>
+    <name>movie-manager-web Maven Webapp</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -32,7 +32,7 @@
         </dependency>
         <dependency>
             <groupId>com.byx.movie</groupId>
-            <artifactId>movie-sso-interface</artifactId>
+            <artifactId>movie-manager-interface</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <!--Spring -->
@@ -116,36 +116,21 @@
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper</artifactId>
         </dependency>
-        <!-- shiro -->
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-spring</artifactId>
-        </dependency>
-        <!-- shiro ehcache -->
-        <dependency>
-            <groupId>org.apache.shiro</groupId>
-            <artifactId>shiro-ehcache</artifactId>
-        </dependency>
     </dependencies>
 
     <build>
-        <!-- 配置tomcat插件 -->
-        <plugins>
-            <!-- 配置Tomcat插件 -->
-            <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <configuration>
-                    <path>/</path>
-                    <port>8081</port>
-                </configuration>
-            </plugin>
-        </plugins>
-        <finalName>e3-sso-web</finalName>
+            <plugins>
+                <!-- 配置Tomcat插件 -->
+                <plugin>
+                    <groupId>org.apache.tomcat.maven</groupId>
+                    <artifactId>tomcat7-maven-plugin</artifactId>
+                    <configuration>
+                        <path>/</path>
+                        <port>8082</port>
+                    </configuration>
+                </plugin>
+            </plugins>
+        <finalName>movie-manager-web</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>
